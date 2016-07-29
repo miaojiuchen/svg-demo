@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SVG</title>
+	<style>
+		.background {
+			background-color: #303030;
+			width: 400px;
+			height: 400px;
+			position: relative;
+		}
+		
+		.brand {
+			position: absolute;
+			/*top: 50%;
+			right: 50%;
+			margin-top: -138px;
+			margin-right: -138px;*/
+			width: 276px;
+			height: 276px;
+			background: url("./bgClient.png") no-repeat;
+			background-position: center;
+			-webkit-transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 1);
+		}
+		
+		.brand:hover {
+			background: url("./bgClientHover.png") no-repeat;
+			background-position: center;
+		}
+		
+		path {
+			fill: none;
+			stroke: #fff;
+			stroke-width: 2;
+			transition: stroke-dashoffset 1s ease-in-out;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="background:#303030">
+		<div class="brand" style="top:0;left:0"></div>
+		<svg preserveAspectRatio="xMidYMid" width="800" height="800">
+			<path d="M"></path>
+			<path d="M581 0 L581 130 L650 130 L650 257 L329 257" style="stroke-dasharray: 647, 647; stroke-dashoffset: 647;" id="path1"></path>
+			<path d="M162 257 L1 257 L1 393 L581 393 L581 662" style="stroke-dasharray: 1146, 1146; stroke-dashoffset: 1146;" id="path2"></path>
+		</svg>
+	</div>
+	<script>
+		var path1 = document.getElementById('path1'), path2 = document.getElementById('path2');;
+		setInterval(function(){
+			if(path1.style['stroke-dashoffset'] === '647'){
+				path1.style['stroke-dashoffset'] = 0;
+			}else{
+				path1.style['stroke-dashoffset'] = 647;
+			}
+
+			setTimeout(function(){
+				if(path2.style['stroke-dashoffset'] === '1146'){
+					path2.style['stroke-dashoffset'] = 0;
+				}else{
+					path2.style['stroke-dashoffset'] = 1146;
+				}
+			},1000);
+		},1000);
+	</script>
+</body>
+
+</html>
