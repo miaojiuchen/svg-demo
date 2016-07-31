@@ -32,40 +32,28 @@
 		
 		path {
 			fill: none;
-			stroke: #fff;
+			stroke: #000;
 			stroke-width: 2;
 			transition: stroke-dashoffset 1s ease-in-out;
 		}
 	</style>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
 <body>
-	<div style="background:#303030">
+	<!--<div style="background:#303030">
 		<div class="brand" style="top:0;left:0"></div>
 		<svg preserveAspectRatio="xMidYMid" width="800" height="800">
 			<path d="M"></path>
 			<path d="M581 0 L581 130 L650 130 L650 257 L329 257" style="stroke-dasharray: 647, 647; stroke-dashoffset: 647;" id="path1"></path>
 			<path d="M162 257 L1 257 L1 393 L581 393 L581 662" style="stroke-dasharray: 1146, 1146; stroke-dashoffset: 1146;" id="path2"></path>
 		</svg>
-	</div>
-	<script>
-		var path1 = document.getElementById('path1'), path2 = document.getElementById('path2');;
-		setInterval(function(){
-			if(path1.style['stroke-dashoffset'] === '647'){
-				path1.style['stroke-dashoffset'] = 0;
-			}else{
-				path1.style['stroke-dashoffset'] = 647;
-			}
+	</div>-->
 
-			setTimeout(function(){
-				if(path2.style['stroke-dashoffset'] === '1146'){
-					path2.style['stroke-dashoffset'] = 0;
-				}else{
-					path2.style['stroke-dashoffset'] = 1146;
-				}
-			},1000);
-		},1000);
-	</script>
+	<svg id="svg">
+	</svg>
+
+	<script src="./index.js"></script>
 </body>
 
 </html>
